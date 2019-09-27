@@ -26,4 +26,3 @@ def get_content(page, selector):
         return None
     content = element[0].get_text()
     return content.strip()
-
