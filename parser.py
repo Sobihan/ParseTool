@@ -17,12 +17,13 @@ def fetch_page():
     return page
 
 def get_content(page, selector):
-    price = page.select(selector)
-    size = len(price)
+    element = page.select(selector)
+    size = len(element)
     if (size > 1):
         print("[WARNING] Nombre Element trouvé:", size, "[WARNING]")
     elif (size == 0):
         print("[WARNING] 0 Element trouvé [WARINING]")
         return None
-    p = price[0].get_text()
-    return p.strip()
+    content = element[0].get_text()
+    return content.strip()
+
